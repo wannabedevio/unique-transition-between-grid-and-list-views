@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>wannabedev.io - A Unique Transition Between Grid and List Views</title>
+		<meta name="description" content="A tutorial on how to create a unique transition between grid and list views with CSS, Javascript, Masonry, and Greensock." />
+		<meta name="keywords" content="tweenmax, gsap, switch, javascript, view mode, grid, list, inspiration" />
+		<meta name="author" content="Mirza Hodzic" />
+		<link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="assets/css/demo.css" />
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJR1BPWFF0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SJR1BPWFF0', {
+        page_path: window.location.pathname,
+      });
+    </script>
+  </head>
+  <body>
+    
+    <!-- wannabedev:loader START -->
+    <div class="loader">
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- wannabedev:loader END -->
+
+    <!-- wannabedev:sidebar START -->
+    <aside class="sidebar">
+      <div class="logo">
+        <a href="https://wannabedev.io/">+</a>
+      </div>
+    </aside>
+    <!-- wannabedev:sidebar END -->
+
+    <!-- wannabedev:header START -->
+    <header>
+      <div class="header-inner"> 
+        <h1>wannabe<strong>dev</strong>.io</h1>
+      </div>
+    </header>
+    <!-- wannabedev:header END -->
+
+    <!-- wannabedev:grid-list START -->
+    <section class="grid-holder">
+
+      <!-- wannabedev:grid-list:navigation+switcher START -->
+      <div class="grid-list-layout">
+        <nav class="navigation">
+          <li><a href="https://wannabedev.io"><span>Home</span></a></li>
+          <li><a href="https://wannabedev.io/tutorials/unveiling-the-enchanting-view-mode-symphony"><span>Back to Article</span></a></li>
+        </nav>
+
+        <div class="grid-list-holder">
+          <span class="grid-layout active">
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+          <g>
+            <g>
+              <path d="M176.792,0H59.208C26.561,0,0,26.561,0,59.208v117.584C0,209.439,26.561,236,59.208,236h117.584
+                C209.439,236,236,209.439,236,176.792V59.208C236,26.561,209.439,0,176.792,0z M196,176.792c0,10.591-8.617,19.208-19.208,19.208
+                H59.208C48.617,196,40,187.383,40,176.792V59.208C40,48.617,48.617,40,59.208,40h117.584C187.383,40,196,48.617,196,59.208
+                V176.792z"/>
+            </g>
+          </g>
+          <g>
+            <g>
+              <path d="M452,0H336c-33.084,0-60,26.916-60,60v116c0,33.084,26.916,60,60,60h116c33.084,0,60-26.916,60-60V60
+                C512,26.916,485.084,0,452,0z M472,176c0,11.028-8.972,20-20,20H336c-11.028,0-20-8.972-20-20V60c0-11.028,8.972-20,20-20h116
+                c11.028,0,20,8.972,20,20V176z"/>
+            </g>
+          </g>
+          <g>
+            <g>
+              <path d="M176.792,276H59.208C26.561,276,0,302.561,0,335.208v117.584C0,485.439,26.561,512,59.208,512h117.584
+                C209.439,512,236,485.439,236,452.792V335.208C236,302.561,209.439,276,176.792,276z M196,452.792
+                c0,10.591-8.617,19.208-19.208,19.208H59.208C48.617,472,40,463.383,40,452.792V335.208C40,324.617,48.617,316,59.208,316h117.584
+                c10.591,0,19.208,8.617,19.208,19.208V452.792z"/>
+            </g>
+          </g>
+          <g>
+            <g>
+              <path d="M452,276H336c-33.084,0-60,26.916-60,60v116c0,33.084,26.916,60,60,60h116c33.084,0,60-26.916,60-60V336
+                C512,302.916,485.084,276,452,276z M472,452c0,11.028-8.972,20-20,20H336c-11.028,0-20-8.972-20-20V336c0-11.028,8.972-20,20-20
+                h116c11.028,0,20,8.972,20,20V452z"/>
+            </g>
+          </g>
+          <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g>
+          </svg>
+        </span>
+          <span class="list-layout">
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+    <g>
+      <g>
+        <path d="M100.923,0C64.276,0,34.462,29.814,34.462,66.462s29.814,66.462,66.462,66.462c36.647,0,66.462-29.814,66.462-66.462
+          S137.57,0,100.923,0z M100.923,103.385C80.563,103.385,64,86.821,64,66.462s16.563-36.923,36.923-36.923
+          c20.36,0,36.923,16.563,36.923,36.923S121.283,103.385,100.923,103.385z"/>
+      </g>
+    </g>
+    <g>
+      <g>
+        <path d="M462.769,22.154h-256c-8.157,0-14.769,6.613-14.769,14.769V96c0,8.157,6.613,14.769,14.769,14.769h256
+          c8.157,0,14.769-6.613,14.769-14.769V36.923C477.538,28.767,470.926,22.154,462.769,22.154z M448,81.231H221.538V51.692H448
+          V81.231z"/>
+      </g>
+    </g>
+    <g>
+      <g>
+        <path d="M100.923,189.538c-36.647,0-66.462,29.814-66.462,66.462s29.814,66.462,66.462,66.462
+          c36.647,0,66.462-29.814,66.462-66.462S137.57,189.538,100.923,189.538z M100.923,292.923C80.563,292.923,64,276.36,64,256
+          s16.563-36.923,36.923-36.923c20.36,0,36.923,16.563,36.923,36.923S121.283,292.923,100.923,292.923z"/>
+      </g>
+    </g>
+    <g>
+      <g>
+        <path d="M462.769,211.692h-256c-8.157,0-14.769,6.613-14.769,14.769v59.077c0,8.157,6.613,14.769,14.769,14.769h256
+          c8.157,0,14.769-6.613,14.769-14.769v-59.077C477.538,218.305,470.926,211.692,462.769,211.692z M448,270.769H221.538v-29.538H448
+          V270.769z"/>
+      </g>
+    </g>
+    <g>
+      <g>
+        <path d="M100.923,379.077c-36.647,0-66.462,29.814-66.462,66.462S64.276,512,100.923,512c36.647,0,66.462-29.814,66.462-66.462
+          S137.57,379.077,100.923,379.077z M100.923,482.462c-20.36,0-36.923-16.563-36.923-36.923c0-20.36,16.563-36.923,36.923-36.923
+          c20.36,0,36.923,16.563,36.923,36.923C137.846,465.898,121.283,482.462,100.923,482.462z"/>
+      </g>
+    </g>
+    <g>
+      <g>
+        <path d="M462.769,401.231h-256c-8.157,0-14.769,6.613-14.769,14.769v59.077c0,8.157,6.613,14.769,14.769,14.769h256
+          c8.157,0,14.769-6.613,14.769-14.769V416C477.538,407.843,470.926,401.231,462.769,401.231z M448,460.308H221.538v-29.538H448
+          V460.308z"/>
+      </g>
+    </g>
+    <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g>
+          </svg>
+        </span>
+        </div>
+      </div>
+      <!-- wannabedev:grid-list:navigation+switcher END -->
+
+      <!-- wannabedev:grid-list:main-section START -->
+      <div class="grid masonry">
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>Cycling 2019</h2>
+              <p class="date"><span>Updated</span> MARCH 16, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>Secret Dataset</h2>
+              <p class="date"><span>Updated</span> MARCH 14, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>Public Dataset</h2>
+              <p class="date"><span>Updated</span> MARCH 11, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>Android Sheet</h2>
+              <p class="date"><span>Updated</span> MARCH 06, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>iOS Sheet</h2>
+              <p class="date"><span>Updated</span> MARCH 02, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>Private Dataset</h2>
+              <p class="date"><span>Updated</span> FEBRUARY 16, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>Lorem Sheet</h2>
+              <p class="date"><span>Updated</span> FEBRUARY 15, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>Ipsum Dataset</h2>
+              <p class="date"><span>Updated</span> FEBRUARY 12, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>Android Sit</h2>
+              <p class="date"><span>Updated</span> FEBRUARY 10, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>iOS Dolor</h2>
+              <p class="date"><span>Updated</span> FEBRUARY 06, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+            </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>Cycling 2018</h2>
+              <p class="date"><span>Updated</span> FEBRUARY 02, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>Cycling 2017</h2>
+              <p class="date"><span>Updated</span> JANUARY 16, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>Cycling 2016</h2>
+              <p class="date"><span>Updated</span> JANUARY 15, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>Cycling 2015</h2>
+              <p class="date"><span>Updated</span> JANUARY 13, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>Cycling 2014</h2>
+              <p class="date"><span>Updated</span> JANUARY 10, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>Cycling 2013</h2>
+              <p class="date"><span>Updated</span> JANUARY 04, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>Cycling 2012</h2>
+              <p class="date"><span>Updated</span> JANUARY 03, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+        <div class="masonry__item">
+          <figure>
+            <figcaption class="content">
+              <h2>Cycling 2011</h2>
+              <p class="date"><span>Updated</span> JANUARY 02, 2019</p>
+              <ul class="tags">
+                <li><a href="#!">VARIABLE</a></li>
+                <li><a href="#!">PROPERTY</a></li>
+                <li><a href="#!">SPEED</a></li>
+                <li><a href="#!">LOREM</a></li>
+                <li><a href="#!">IPSUM</a></li>
+                <li><a href="#!">SIT</a></li>
+                <li><a href="#!" class="more" data-click-state="1">+</a></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        
+      </div>
+      <!-- wannabedev:grid-list:main-section END -->
+
+    </section>
+    <!-- wannabedev:grid-list END -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://masonry.desandro.com/masonry.pkgd.js"></script>
+    <script src="assets/js/demo.js"></script>
+
+  </body>
+</html>
