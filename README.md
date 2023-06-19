@@ -1,4 +1,4 @@
-# A Unique Transition Between Grid and List Views
+# Unique Transition Between Grid and List Views
 
 A tutorial on how to create a unique transition between grid and list views with CSS, Javascript, Masonry, and Greensock. 
 
