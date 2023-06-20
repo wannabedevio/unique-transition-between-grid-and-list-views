@@ -4,9 +4,9 @@ A tutorial on how to create a unique transition between grid and list views with
 
 ![A Unique Transition Between Grid and List Views](/assets/img/a-unique-transition-between-grid-and-list-views-new.png)
 
-[Article on WANNABEDEV](https://wannabedev.io/tutorials/unveiling-the-enchanting-view-mode-symphony/)
+[Article on WANNABEDEV](https://www.wannabedev.io/tutorials/unique-transition-between-grid-and-list-views/)
 
-[Demo](https://wannabedev.io/_posts/demo/unveiling-the-enchanting-view-mode-symphony)
+[Demo](https://www.wannabedev.io/_posts/unique-transition-between-grid-and-list-views/demo/index.html/)
 
 ## Credits
 - The inspiration for effects and Layout comes from [kreatıva](https://dribbble.com/shots/3777026-Spindle-Data-Sources-Animation)
