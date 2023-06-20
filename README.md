@@ -2,7 +2,7 @@
 
 A tutorial on how to create a unique transition between grid and list views with CSS, Javascript, Masonry, and Greensock. 
 
-![A Unique Transition Between Grid and List Views](https://raw.githubusercontent.com/wannabedevio/unique-transition-between-grid-and-list-views/main/assets/img/a-unique-transition-between-grid-and-list-views-new.png)
+![A Unique Transition Between Grid and List Views](/assets/img/a-unique-transition-between-grid-and-list-views-new.png)
 
 [Article on WANNABEDEV](https://wannabedev.io/tutorials/unveiling-the-enchanting-view-mode-symphony/)
 
