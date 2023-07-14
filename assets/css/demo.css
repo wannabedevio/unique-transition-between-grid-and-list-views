@@ -252,13 +252,13 @@ section.grid-holder .grid-list-layout .grid-list-holder span.list-layout svg {
   transition: all 0.35s ease-in-out;
 }
 section.grid-holder .grid-list-layout .grid-list-holder span:hover svg {
-  fill: rgba(255, 255, 255, 0.65);
+  fill: rgba(154, 140, 152, 1);
 }
 section.grid-holder .grid-list-layout .grid-list-holder span.active {
   pointer-events: none;
 }
 section.grid-holder .grid-list-layout .grid-list-holder span.active svg {
-  fill: rgba(154, 140, 152, 1);
+  fill: rgba(255, 255, 255, 0.65);
 }
 section.grid-holder .masonry {
   width: 100%;
