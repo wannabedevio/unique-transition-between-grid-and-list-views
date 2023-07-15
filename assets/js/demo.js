@@ -17,6 +17,7 @@
   const tagsSelector = '.tags';
   const listLayoutSelector = '.list-layout';
   const gridLayoutSelector = '.grid-layout';
+  let isTransitioning = false;
 
   // Masonry initialization
   new Masonry(gridSelector, {
@@ -37,7 +38,9 @@
   // List layout function
   const listLayout = (element) => {
     // Initialize variables
-    const masterTimeline = gsap.timeline({ paused: true });
+    const masterTimeline = gsap.timeline({ paused: true, onComplete: () => {
+      isTransitioning = false;
+    }});
     const topTimeline = gsap.timeline();
     const middleTimeline = gsap.timeline();
     const bottomTimeline = gsap.timeline();
@@ -75,7 +78,9 @@
   // Grid layout function
   const gridLayout = (element) => {
     // Initialize variables
-    const masterTimeline = gsap.timeline({ paused: true });
+    const masterTimeline = gsap.timeline({ paused: true, onComplete: () => {
+      isTransitioning = false;
+    }});
     const topTimeline = gsap.timeline();
     const middleTimeline = gsap.timeline();
     const bottomTimeline = gsap.timeline();
@@ -122,26 +127,36 @@
 
   // Grid to list trigger
   document.querySelector(listLayoutSelector).addEventListener('click', () => {
-    // Add/remove active class
-    document.querySelector(gridLayoutSelector).classList.remove('active');
-    document.querySelector(listLayoutSelector).classList.add('active');
-    // Call list function
-    const elements = document.querySelectorAll(masonryItemSelector);
-    elements.forEach((element) => {
-      listLayout(element);
-    });
+    if (!isTransitioning) {
+      isTransitioning = true;
+
+      // Add/remove active class
+      document.querySelector(gridLayoutSelector).classList.remove('active');
+      document.querySelector(listLayoutSelector).classList.add('active');
+      // Call list function
+      const elements = document.querySelectorAll(masonryItemSelector);
+
+      elements.forEach((element) => {
+        listLayout(element);
+      });
+    }
   });
 
   // List to grid trigger
   document.querySelector(gridLayoutSelector).addEventListener('click', () => {
-    // Add/remove active class
-    document.querySelector(listLayoutSelector).classList.remove('active');
-    document.querySelector(gridLayoutSelector).classList.add('active');
-    // Call grid function
-    const elements = document.querySelectorAll(masonryItemSelector);
-    elements.forEach((element) => {
-      gridLayout(element);
-    });
+    if (!isTransitioning) {
+      isTransitioning = true;
+      
+      // Add/remove active class
+      document.querySelector(listLayoutSelector).classList.remove('active');
+      document.querySelector(gridLayoutSelector).classList.add('active');
+      // Call grid function
+      const elements = document.querySelectorAll(masonryItemSelector);
+
+      elements.forEach((element) => {
+        gridLayout(element);
+      });
+    }
   });
 
   // Extras - Click on item to show/hide tags
